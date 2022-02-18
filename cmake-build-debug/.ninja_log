@@ -1,0 +1,21 @@
+# ninja log v5
+392	485	1645210960828270521	HelloWorldClion	5e43fbffaabae6cb
+1	637	1645210662224284674	CMakeFiles/HelloWorldClion.dir/src/main.cpp.o	996f2187341271d
+0	392	1645210960736282330	CMakeFiles/HelloWorldClion.dir/src/fun.cpp.o	aaffdd4deece6a22
+0	502	1645210443407273190	CMakeFiles/HelloWorldClion.dir/main.cpp.o	c0ad9d4ea0073a97
+1	372	1645212034986744153	CMakeFiles/HelloWorldClion.dir/src/main.cpp.o	996f2187341271d
+372	466	1645212035078744719	HelloWorldClion	5e43fbffaabae6cb
+1	576	1645212048042825191	CMakeFiles/HelloWorldClion.dir/src/main.cpp.o	996f2187341271d
+576	696	1645212048162825943	HelloWorldClion	5e43fbffaabae6cb
+0	696	1645212352036971672	CMakeFiles/HelloWorldClion.dir/src/main.cpp.o	996f2187341271d
+696	850	1645212352192972859	HelloWorldClion	5e43fbffaabae6cb
+1	589	1645212478585949663	CMakeFiles/HelloWorldClion.dir/src/main.cpp.o	996f2187341271d
+589	690	1645212478689950478	HelloWorldClion	5e43fbffaabae6cb
+1	516	1645213205623649345	CMakeFiles/HelloWorldClion.dir/src/main.cpp.o	996f2187341271d
+516	609	1645213205715652544	HelloWorldClion	5e43fbffaabae6cb
+0	470	1645213655637306516	CMakeFiles/HelloWorldClion.dir/src/main.cpp.o	996f2187341271d
+470	581	1645213655745314672	HelloWorldClion	5e43fbffaabae6cb
+1	445	1645213759476722092	CMakeFiles/HelloWorldClion.dir/src/main.cpp.o	996f2187341271d
+445	541	1645213759572728649	HelloWorldClion	5e43fbffaabae6cb
+1	376	1645213980084371067	CMakeFiles/HelloWorldClion.dir/src/main.cpp.o	996f2187341271d
+377	469	1645213980176374443	HelloWorldClion	5e43fbffaabae6cb

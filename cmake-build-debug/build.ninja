@@ -84,6 +84,12 @@ build CMakeFiles/HelloWorldClion.dir/src/fun.cpp.o: CXX_COMPILER__HelloWorldClio
   OBJECT_DIR = CMakeFiles/HelloWorldClion.dir
   OBJECT_FILE_DIR = CMakeFiles/HelloWorldClion.dir/src
 
+build CMakeFiles/HelloWorldClion.dir/src/Log.cpp.o: CXX_COMPILER__HelloWorldClion_Debug /home/piyush/CLionProjects/HelloWorldClion/src/Log.cpp || cmake_object_order_depends_target_HelloWorldClion
+  DEP_FILE = CMakeFiles/HelloWorldClion.dir/src/Log.cpp.o.d
+  FLAGS = -g -std=gnu++11
+  OBJECT_DIR = CMakeFiles/HelloWorldClion.dir
+  OBJECT_FILE_DIR = CMakeFiles/HelloWorldClion.dir/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target HelloWorldClion
@@ -92,7 +98,7 @@ build CMakeFiles/HelloWorldClion.dir/src/fun.cpp.o: CXX_COMPILER__HelloWorldClio
 #############################################
 # Link the executable HelloWorldClion
 
-build HelloWorldClion: CXX_EXECUTABLE_LINKER__HelloWorldClion_Debug CMakeFiles/HelloWorldClion.dir/src/main.cpp.o CMakeFiles/HelloWorldClion.dir/src/fun.cpp.o
+build HelloWorldClion: CXX_EXECUTABLE_LINKER__HelloWorldClion_Debug CMakeFiles/HelloWorldClion.dir/src/main.cpp.o CMakeFiles/HelloWorldClion.dir/src/fun.cpp.o CMakeFiles/HelloWorldClion.dir/src/Log.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/HelloWorldClion.dir
   POST_BUILD = :

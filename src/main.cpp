@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <array>
 #include "fun.h"
 #include "Log.h"
 
@@ -13,7 +14,24 @@ void IncrementWithReference(int &value) {
     value++;
 }
 
-class Player {
+// Interface utils
+class Printable {
+public:
+    virtual std::string GetClassName() = 0; // = 0 makes it a pure virtual function
+};
+void Print(Printable* obj) {
+    std::cout << obj->GetClassName() << std::endl;
+}
+
+class AClass : public Printable {
+public:
+    std::string GetClassName() override {
+        return "AClass";
+    }
+};
+
+// Class utils
+class Player : public Printable{
 public:
     int x, y;
     int speed;
@@ -24,6 +42,10 @@ public:
     }
 
     virtual std::string GetName() {
+        return "Player";
+    }
+
+    std::string GetClassName() override {
         return "Player";
     }
 };
@@ -40,6 +62,10 @@ public:
 
     std::string GetName() override{
         return m_Name;
+    }
+
+    std::string GetClassName() override {
+        return "PlayerWithName";
     }
 };
 
@@ -167,20 +193,65 @@ int main() {
 //    }
 //    LOG(EnumExample::A);
 
-    // ------------------- Inheritance with virtual fucntions------------------------ //
-    LOG(sizeof(Player));
-    LOG(sizeof(PlayerWithName));
-    Player player;
-    LOG(player.GetName());
-    PlayerWithName* playerWithName = new PlayerWithName("Piyush");
-    playerWithName->PrintName();
-    playerWithName->Move(1, 2);
-    LOG(playerWithName->GetName());
+    // ------------------- Inheritance with virtual functions------------------------ //
+//    LOG(sizeof(Player));
+//    LOG(sizeof(PlayerWithName));
+//    Player player;
+//    LOG(player.GetName());
+//    PlayerWithName* playerWithName = new PlayerWithName("Piyush");
+//    playerWithName->PrintName();
+//    playerWithName->Move(1, 2);
+//    LOG(playerWithName->GetName());
+//
+//    Player* player1 = playerWithName;
+//    LOG(player1->GetName()); // this should call getName of playerWithName, so the getName in
+//    // base class is marked as virtual (some vtable magic). Also mark the overridden function
+//    // in sub-class as "override". To mark the function as override, the base function should be
+//    // marked as "virtual"
+//    // There's an increase in memory space due to vtable and also performance due to accessing vtables
 
-    Player* player1 = playerWithName;
-    LOG(player1->GetName()); // this should call getName of playerWithName, so the getName in
-    // base class is marked as virtual (some vtable magic). Also mark the overridden function
-    // in sub-class as "override". To mark the function as override, the base function should be
-    // marked as "virtual"
-    // There's an increase in memory space due to vtable and also performance due to accessing vtables
+    // ------------------- Interface i.e pure virtual functions------------------------ //
+//    Player* p = new Player();
+//    Print(p);
+//
+//    PlayerWithName* p1 = new PlayerWithName("Piyush");
+//    Print(p1);
+//
+//    AClass* aClass = new AClass();
+//    Print(aClass);
+
+    // ------------------- Visibility------------------------ //
+    // Default visibility in class is private and struct is public
+    // private - only the class or friends
+    // protected - the class and subclasses but not outside of class and subclasses
+    // public - from everywhere
+
+    // ------------------- Arrays ------------------------ //
+    int example[5];
+    int* examplePtr = example;
+    example[0] = 3;
+    *(examplePtr + 2) = 7;
+    *(int*)((char*)examplePtr + 8) = 10; //  this is similar to above line
+    example[4] = 6;
+
+    int* anotherArr = new int[5]; // this is created on heap and need to be destroyed
+    // or need will be deleted when program ends (not the scope but program)
+    // the use case is when a function has to return an array, it has to live outside the scope
+    // by creating on heap has a downside which is jumping around memory and that is a performance hit
+
+    // there is no method to get the size of array if it's created on heap
+    anotherArr[3] = 6;
+
+    LOG(sizeof(example)/sizeof(int));
+    delete[] anotherArr;
+
+    // correct way to keep size
+    static const int arrSize = 5;
+    int arr[arrSize];
+
+    // cpp11
+    std::array<int, 50> cppArray;
+    LOG(cppArray.size());
+
+    LOG(example);
 }

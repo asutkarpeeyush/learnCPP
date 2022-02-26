@@ -267,10 +267,10 @@ int main() {
 //    LOG(example);
 
     // ------------------- Strings ------------------------ //
-    char* name = "Piyush"; //\o is null termination
-    // *name = 'g'; // not allowed in some compilers
-    // https://stackoverflow.com/questions/164194/why-do-i-get-a-segmentation-fault-when-writing-to-a-char-s-initialized-with-a
-    LOG(name);
+    // char* name = "Piyush"; //\o is null termination
+    // // *name = 'g'; // not allowed in some compilers
+    // // https://stackoverflow.com/questions/164194/why-do-i-get-a-segmentation-fault-when-writing-to-a-char-s-initialized-with-a
+    // LOG(name);
 
     char name2[5] = {'P', 'i', 'y', 'u', '\0'};
     LOG(name2);
@@ -286,4 +286,6 @@ int main() {
     // always pass strings by const reference or reference
     AlterCPPString(cppName);
     LOG(cppName);
+
+    LOG("Hello how are you?")
 }

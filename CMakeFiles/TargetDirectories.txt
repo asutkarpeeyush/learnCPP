@@ -1,0 +1,3 @@
+/workspace/learnCPP/CMakeFiles/HelloWorldClion.dir
+/workspace/learnCPP/CMakeFiles/edit_cache.dir
+/workspace/learnCPP/CMakeFiles/rebuild_cache.dir

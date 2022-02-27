@@ -109,6 +109,32 @@ void AlterCPPString(std::string& cppString) {
     cppString += "hhh";
 }
 
+// CONST class util
+class ConstEx {
+private:
+  int mX, mY;
+  mutable int x;
+
+public:
+  // A const function can't modify class variable values
+  // except mutables
+  int GetX() const {
+    x = 6;
+    return mX;
+  }
+
+  // this func can modify mX
+  int GetX() {
+    return mX;
+  }
+};
+
+// for this function to be able o call GetX, GetX should be const
+// that would mean a const refernce ex calls a function that modifies ex
+// which isn't allowed
+void PrintConstEx(const ConstEx& ex) {
+  std::cout << ex.GetX() << std::endl;
+}
 
 int main() {
     int a;
@@ -267,25 +293,36 @@ int main() {
 //    LOG(example);
 
     // ------------------- Strings ------------------------ //
-    // char* name = "Piyush"; //\o is null termination
+    // const char* name = "Piyush"; //\0 is null termination
     // // *name = 'g'; // not allowed in some compilers
     // // https://stackoverflow.com/questions/164194/why-do-i-get-a-segmentation-fault-when-writing-to-a-char-s-initialized-with-a
     // LOG(name);
 
-    char name2[5] = {'P', 'i', 'y', 'u', '\0'};
-    LOG(name2);
+    // char name2[5] = {'P', 'i', 'y', 'u', '\0'};
+    // LOG(name2);
 
-    std::string cppName = "Cherno";
-    cppName += " Hello";
-    // std::string cppName = std::string("Cherno") +  "Hello";
-    bool contains = cppName.find("no") != std::string::npos;
-    LOG(contains);
-    LOG(cppName.size());
-    LOG(cppName);
+    // std::string cppName = "Cherno";
+    // cppName += " Hello";
+    // // std::string cppName = std::string("Cherno") +  "Hello";
+    // bool contains = cppName.find("no") != std::string::npos;
+    // LOG(contains);
+    // LOG(cppName.size());
+    // LOG(cppName);
 
-    // always pass strings by const reference or reference
-    AlterCPPString(cppName);
-    LOG(cppName);
+    // // always pass strings by const reference or reference
+    // AlterCPPString(cppName);
+    // LOG(cppName);
 
-    LOG("Hello how are you?")
+  // ------------------- CONST ------------------------ //
+  const int MAX_AGE = 90;
+
+  const int* aPnt = new int; // this is to make the integer at the pointer constant
+  int* const bPnt = new int; // this is to make pointer constant
+  // *aPnt = 40; // this isn't allowed
+  *bPnt = 20; // this is ok
+  LOG(*bPnt);
+
+  const int* const cPnt = new int; // cant change content nor pointer
+  aPnt = (int*)&MAX_AGE; // this is breaking the const promise
+  LOG(*aPnt);
 }

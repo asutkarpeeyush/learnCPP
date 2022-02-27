@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/HelloWorldClion.dir/src/main.cpp.o CMakeFiles/HelloWorldClion.dir/src/fun.cpp.o CMakeFiles/HelloWorldClion.dir/src/Log.cpp.o -o HelloWorldClion 
+/usr/bin/c++     CMakeFiles/HelloWorldClion.dir/src/main.cpp.o CMakeFiles/HelloWorldClion.dir/src/fun.cpp.o CMakeFiles/HelloWorldClion.dir/src/Log.cpp.o  -o HelloWorldClion 

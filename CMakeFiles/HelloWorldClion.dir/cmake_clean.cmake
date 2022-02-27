@@ -1,12 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/HelloWorldClion.dir/src/Log.cpp.o"
-  "CMakeFiles/HelloWorldClion.dir/src/Log.cpp.o.d"
-  "CMakeFiles/HelloWorldClion.dir/src/fun.cpp.o"
-  "CMakeFiles/HelloWorldClion.dir/src/fun.cpp.o.d"
   "CMakeFiles/HelloWorldClion.dir/src/main.cpp.o"
-  "CMakeFiles/HelloWorldClion.dir/src/main.cpp.o.d"
-  "HelloWorldClion"
+  "CMakeFiles/HelloWorldClion.dir/src/fun.cpp.o"
+  "CMakeFiles/HelloWorldClion.dir/src/Log.cpp.o"
   "HelloWorldClion.pdb"
+  "HelloWorldClion"
 )
 
 # Per-language clean rules from dependency scanning.

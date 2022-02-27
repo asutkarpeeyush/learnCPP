@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/runner/learnCPP/src/Log.cpp
+iostream
+-
+Log.h
+/home/runner/learnCPP/src/Log.h
+
+/home/runner/learnCPP/src/Log.h
+
+/home/runner/learnCPP/src/fun.cpp
+iostream
+-
+
+/home/runner/learnCPP/src/fun.h
+
+/home/runner/learnCPP/src/main.cpp
+iostream
+-
+string
+-
+array
+-
+fun.h
+/home/runner/learnCPP/src/fun.h
+Log.h
+/home/runner/learnCPP/src/Log.h
+

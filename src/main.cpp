@@ -314,15 +314,27 @@ int main() {
     // LOG(cppName);
 
   // ------------------- CONST ------------------------ //
-  const int MAX_AGE = 90;
+  // const int MAX_AGE = 90;
 
-  const int* aPnt = new int; // this is to make the integer at the pointer constant
-  int* const bPnt = new int; // this is to make pointer constant
-  // *aPnt = 40; // this isn't allowed
-  *bPnt = 20; // this is ok
-  LOG(*bPnt);
+  // const int* aPnt = new int; // this is to make the integer at the pointer constant
+  // int* const bPnt = new int; // this is to make pointer constant
+  // // *aPnt = 40; // this isn't allowed
+  // *bPnt = 20; // this is ok
+  // LOG(*bPnt);
 
-  const int* const cPnt = new int; // cant change content nor pointer
-  aPnt = (int*)&MAX_AGE; // this is breaking the const promise
-  LOG(*aPnt);
+  // const int* const cPnt = new int; // cant change content nor pointer
+  // aPnt = (int*)&MAX_AGE; // this is breaking the const promise
+  // LOG(*aPnt);
+
+  // ------------------- MUTABLE Keyword ------------------------ //
+  // one use case is in classes that is already covered
+  // another is in lambda functions
+  int xLam = 10;
+  auto f = [&](int anoLam) mutable { // mutable is needed to be able to change xLam
+    xLam = 5;
+    LOG(xLam);
+    LOG(anoLam);
+  };
+  f(50);
+  LOG(xLam);
 }
